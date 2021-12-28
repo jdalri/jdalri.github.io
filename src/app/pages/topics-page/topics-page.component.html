@@ -1,0 +1,50 @@
+<app-page-header
+  title="Topics for {{ space.name }} space"
+  [showSearch]="true"
+  (searchButtonClick)="doSearch($event)"
+></app-page-header>
+
+<app-spinner [show]="showSpinner"></app-spinner>
+
+<div class="container">
+
+  <button class="btn btn-outline-info shadow-sm mr-2 my-1" (click)="goBack()">
+    <fa-icon [icon]="iconAngleDoubleLeft" style="margin-right: 10px;"></fa-icon>
+    Go back
+  </button>
+
+  <hr class="mt-2 mb-4" />
+
+  <!-- THIS WILL BE A COLLAPSABLE WITH THE TITLES OF THE TOPIC AS CONTENT -->
+  <app-alert text="No topics for this space" *ngIf="topicList.length < 1"></app-alert>
+
+  <div *ngIf="topicList.length > 0">
+    <div *ngFor="let topic of topicList" class="topic-container">
+
+      <div class="input-group topic-card">
+        <span class="form-control topic-card-text" (click)="goToKnowledgePage(topic)">
+          {{ topic.name }}
+        </span>
+
+        <div class="input-group-append">
+          <span
+            class="btn btn-outline-primary topic-aux-btn"
+            [ngClass]="{ 'disabled' : topic.description === null }"
+            (click)="toggleCollapsiblePanel(topic)"
+            [attr.aria-expanded]="!topic.isCollapsed"
+          >
+            <fa-icon [icon]="iconChevronDown" size="lg"></fa-icon>
+          </span>
+        </div>
+      </div>
+
+      <div #collapse="ngbCollapse" [(ngbCollapse)]="!topic.isCollapsed" class="collapsable-container">
+        <div class="card">
+          <div class="card-body collapsable-card-body">
+            {{ topic.description }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

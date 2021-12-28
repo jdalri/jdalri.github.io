@@ -1,0 +1,56 @@
+<app-page-header
+  [showSmallHeader]="true"
+  [showGoBackButton]="false"
+  [title]="pageTitle"
+></app-page-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+
+      <div class="card card-header-actions mb-4">
+        <div class="card-header" >
+          New knowledge
+        </div>
+
+        <div class="card-body" style="min-height: 500px;">
+          <form [formGroup]="knowledgeForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+              <!-- Title -->
+              <div class="form-group col-md-6 col-sm-12">
+                <label class="small mb-1" for="title">Title</label>
+                <input class="form-control" id="title" type="text" placeholder="Enter the title" formControlName="title" required />
+                <div class="invalid-input" *ngIf="title.invalid && (title.dirty || title.touched)">
+                  <span *ngIf="title.errors?.['required']">Please provide a name.</span>
+                </div>
+              </div>
+
+              <!-- Short title -->
+              <div class="form-group col-md-6 col-sm-12">
+                <label class="small mb-1" for="shortTitle">Short title</label>
+                <input class="form-control" id="shortTitle" type="text" placeholder="Enter the short title" formControlName="shortTitle" />
+                <div class="invalid-input" *ngIf="shortTitle.invalid && (shortTitle.dirty || shortTitle.touched)">
+                  <span *ngIf="shortTitle.errors?.['required']">Please provide a short title.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12 col-sm-12">
+                <ckeditor [editor]="ckEditor" formControlName="content" required></ckeditor>
+
+                <div class="invalid-input" *ngIf="content.invalid && (content.dirty || content.touched)">
+                  <span *ngIf="content.errors?.['required']">Please provide the content.</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-success" type="submit" style="margin-right: 5px;" [disabled]="knowledgeForm.invalid">Save</button>
+            <button class="btn btn-primary" type="button" (click)="cancel()">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

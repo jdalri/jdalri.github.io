@@ -1,0 +1,37 @@
+<div id="layoutSidenav_nav">
+  <nav class="sidenav shadow-right sidenav-light">
+    <div class="sidenav-menu">
+      <div class="nav accordion" id="accordionSidenav">
+
+        <!-- Sidenav Menu Heading (Core)-->
+        <div class="sidenav-menu-heading">Core</div>
+
+        <a class="nav-link" href="javascript:void(0);" routerLink="spaces" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+          <div class="nav-link-icon">
+            <fa-icon [icon]="iconSiteMap"></fa-icon>
+          </div>
+          Spaces
+        </a>
+
+        <div class="sidenav-menu-heading">
+          Manage
+        </div>
+
+        <a class="nav-link" href="javascript:void(0);" routerLink="/knowledges/create" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+          <div class="nav-link-icon">
+            <fa-icon [icon]="iconSiteMap"></fa-icon>
+          </div>
+          New knowledge
+        </a>
+      </div>
+    </div>
+
+    <!-- Sidenav Footer-->
+    <div class="sidenav-footer">
+      <div class="sidenav-footer-content">
+        <div class="sidenav-footer-subtitle">Logged in as:</div>
+        <div class="sidenav-footer-title">Valerie Luna</div>
+      </div>
+    </div>
+  </nav>
+</div>

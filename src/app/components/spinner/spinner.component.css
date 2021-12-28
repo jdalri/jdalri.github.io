@@ -1,0 +1,103 @@
+.cssload-container{
+  position: fixed;
+  z-index: 999;
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 50px;
+}
+
+.cssload-container:before {
+  content: '';
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.cssload-whirlpool,
+.cssload-whirlpool::before,
+.cssload-whirlpool::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 6px solid rgba(204,204,204,0);
+  border-left-color: #42A5F5;
+  border-radius: 5869px;
+  -o-border-radius: 5869px;
+  -ms-border-radius: 5869px;
+  -webkit-border-radius: 5869px;
+  -moz-border-radius: 5869px;
+}
+
+.cssload-whirlpool {
+  margin: -147px 0 0 -147px;
+  height: 294px;
+  width: 294px;
+  animation: cssload-rotate 1900ms linear infinite;
+  -o-animation: cssload-rotate 1900ms linear infinite;
+  -ms-animation: cssload-rotate 1900ms linear infinite;
+  -webkit-animation: cssload-rotate 1900ms linear infinite;
+  -moz-animation: cssload-rotate 1900ms linear infinite;
+}
+
+.cssload-whirlpool::before {
+  content: "";
+  margin: -135px 0 0 -135px;
+  height: 259px;
+  width: 259px;
+  animation: cssload-rotate 1900ms linear infinite;
+  -o-animation: cssload-rotate 1900ms linear infinite;
+  -ms-animation: cssload-rotate 1900ms linear infinite;
+  -webkit-animation: cssload-rotate 1900ms linear infinite;
+  -moz-animation: cssload-rotate 1900ms linear infinite;
+}
+
+.cssload-whirlpool::after {
+  content: "";
+  margin: -170px 0 0 -170px;
+  height: 329px;
+  width: 329px;
+  animation: cssload-rotate 3800ms linear infinite;
+  -o-animation: cssload-rotate 3800ms linear infinite;
+  -ms-animation: cssload-rotate 3800ms linear infinite;
+  -webkit-animation: cssload-rotate 3800ms linear infinite;
+  -moz-animation: cssload-rotate 3800ms linear infinite;
+}
+
+@keyframes cssload-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes cssload-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@-ms-keyframes cssload-rotate {
+  100% {
+    -ms-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes cssload-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes cssload-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}

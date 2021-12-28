@@ -1,0 +1,29 @@
+<app-page-header
+  title="Spaces"
+  [showSearch]="true"
+  (searchButtonClick)="doSearch($event)"
+></app-page-header>
+
+<app-spinner [show]="showSpinner"></app-spinner>
+
+<!-- Main page content-->
+<div class="container">
+  <app-alert text="No spaces found" *ngIf="spaceList.length < 1"></app-alert>
+
+  <div class="row" *ngIf="spaceList.length > 0">
+    <div class="col-lg-4 mb-4" *ngFor="let space of spaceList">
+      <div class="card lift lift-sm h-100 card-anchor">
+        <div class="card-body cursor-pointer" (click)="navigateToSpaceTopics(space)">
+          <h5 class="card-title mb-2" [style.color]="space.color">
+            {{ space.name }}
+          </h5>
+          <p class="card-text mb-1" *ngIf="space.description !== null && space.description.length > 0">
+            {{ space.description }}
+          </p>
+        </div>
+
+        <div class="card-footer d-flex justify-content-end" [style.backgroundColor]="defineCardFooterBackgroundColor(space.color)"></div>
+      </div>
+    </div>
+  </div>
+</div>

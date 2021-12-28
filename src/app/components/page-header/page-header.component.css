@@ -1,0 +1,31 @@
+.bg-gradient-primary {
+  background-color: #0061f2;
+}
+
+.search-button {
+  padding-left: 18px !important;
+  background-color: #00ac6a !important;
+  color: #fff;
+  cursor: pointer;
+}
+
+.page-header-compact-bgc {
+  background-color: #0061f2;
+}
+
+.header-text {
+  color: #fff;
+  font-size: 1.75rem !important;
+}
+
+.create-btn {
+  color: #fff;
+  font-weight: bold;
+}
+
+.clear-search-button {
+  background-color: #00cfd5 !important;
+  color: #fff;
+  cursor: pointer;
+  padding-left: 18px !important;
+}
