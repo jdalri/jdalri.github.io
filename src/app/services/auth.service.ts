@@ -10,14 +10,18 @@ export class AuthService {
   private username: string = environment.username;
   private password: string = environment.password;
 
-  constructor() {}
+  constructor() {
+    let storedUser: User = JSON.parse(localStorage.getItem('loggedUser'));
+
+    if (storedUser != null && new Date(storedUser.createDate).getDate() < new Date().getDate())
+      localStorage.clear();
+  }
 
   logIn(username: string, password: string): boolean {
-
-    console.log(username + ' | ' + password);
-
     if (username === this.username && password === this.password) {
       this.loggedInUser = new User(username, password);
+
+      localStorage.setItem('loggedUser', JSON.stringify(this.loggedInUser));
 
       return true;
     }
@@ -30,8 +34,8 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    console.log('isLoggedIn()', this.loggedInUser);
+    let storedUser = JSON.parse(localStorage.getItem('loggedUser'));
 
-    return this.loggedInUser != null;
+    return this.loggedInUser != null || storedUser != null;
   }
 }

@@ -1,9 +1,11 @@
 export class User {
-  private _username: string;
-  private _password: string;
+  username: string;
+  password: string;
+  createDate: Date;
 
   constructor(username: string, password: string) {
-    this._username = username;
-    this._password = password;
+    this.username = username;
+    this.password = password;
+    this.createDate = new Date();
   }
 }

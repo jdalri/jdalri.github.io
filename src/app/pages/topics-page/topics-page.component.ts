@@ -41,8 +41,6 @@ export class TopicsPageComponent implements OnInit {
     else
       this.topicList = this._dataService.getAllTopicsFromSpace(this.space.id);
 
-    console.log(this.topicList);
-
     this.showSpinner = false;
   }
 

@@ -29,7 +29,7 @@ export class KnowledgePageComponent implements OnInit {
 
       if (history.state.topic !== undefined) {
         this.topic = history.state.topic;
-        this.space = history.state.state;
+        this.space = history.state.space;
       }
 
       this.title = `Knowledges for topic ${ this.topic.name }`;

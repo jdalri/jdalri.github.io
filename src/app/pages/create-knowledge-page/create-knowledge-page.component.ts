@@ -45,8 +45,6 @@ export class CreateKnowledgePageComponent implements OnInit {
       this.knowledgeForm.markAllAsTouched();
       return;
     }
-
-    console.log(this.knowledgeForm.value);
   }
 
   cancel() {

@@ -13,6 +13,7 @@ export class LoginPageComponent implements OnInit {
   loginForm: FormGroup;
   submitted: boolean = false;
   loading: boolean = false;
+  loginFailed: boolean = false;
 
   constructor(private _authService: AuthService, private _router: Router, private _teste: DataService) {}
 
@@ -24,18 +25,14 @@ export class LoginPageComponent implements OnInit {
       username: new FormControl('', [ Validators.required ]),
       password: new FormControl('', [ Validators.required ]),
     });
-
-    console.log(this._teste.getDatabaseData());
   }
 
   onSubmit() {
-    console.log('onSubmit()');
-
     const successfulLogin = this._authService.logIn(this.username.value, this.password.value);
-
-    console.log('onSubmit()', successfulLogin);
 
     if (successfulLogin)
       this._router.navigateByUrl('/spaces');
+    else
+      this.loginFailed = true;
   }
 }

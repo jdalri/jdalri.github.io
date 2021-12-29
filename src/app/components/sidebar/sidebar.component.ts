@@ -18,6 +18,5 @@ export class SidebarComponent implements OnInit {
   constructor(private _router: Router) { }
 
   ngOnInit(): void {
-    console.log(this._router.url);
   }
 }
