@@ -22,6 +22,8 @@ import { KnowledgePageComponent } from './pages/knowledge-page/knowledge-page.co
 import { KnowledgeContentDisplayComponent } from './components/knowledge-content-display/knowledge-content-display.component';
 import {CKEditorModule} from "@ckeditor/ckeditor5-angular";
 import { CreateKnowledgePageComponent } from './pages/create-knowledge-page/create-knowledge-page.component';
+import { CreateTopicPageComponent } from './pages/create-topic-page/create-topic-page.component';
+import { CreateSpacePageComponent } from './pages/create-space-page/create-space-page.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,8 @@ import { CreateKnowledgePageComponent } from './pages/create-knowledge-page/crea
     KnowledgePageComponent,
     KnowledgeContentDisplayComponent,
     CreateKnowledgePageComponent,
+    CreateTopicPageComponent,
+    CreateSpacePageComponent,
   ],
   imports: [
     BrowserModule,

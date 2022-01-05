@@ -34,8 +34,11 @@ export class AuthService {
   }
 
   isLoggedIn(): boolean {
-    let storedUser = JSON.parse(localStorage.getItem('loggedUser'));
+    let storedUser: User = JSON.parse(localStorage.getItem('loggedUser'));
 
-    return this.loggedInUser != null || storedUser != null;
+    if (storedUser != null && storedUser.username === this.username && storedUser.password === this.password)
+      return true;
+
+    return this.loggedInUser != null;
   }
 }

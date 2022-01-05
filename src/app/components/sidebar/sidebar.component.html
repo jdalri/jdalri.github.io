@@ -17,9 +17,23 @@
           Manage
         </div>
 
-        <a class="nav-link" href="javascript:void(0);" routerLink="/knowledges/create" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+        <a class="nav-link" href="javascript:void(0);" routerLink="/spaces/create" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
           <div class="nav-link-icon">
             <fa-icon [icon]="iconSiteMap"></fa-icon>
+          </div>
+          New Space
+        </a>
+
+        <a class="nav-link" href="javascript:void(0);" routerLink="/topics/create" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+          <div class="nav-link-icon">
+            <fa-icon [icon]="iconListAlt"></fa-icon>
+          </div>
+          New Topic
+        </a>
+
+        <a class="nav-link" href="javascript:void(0);" routerLink="/knowledges/create" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: false }">
+          <div class="nav-link-icon">
+            <fa-icon [icon]="iconLightbulb"></fa-icon>
           </div>
           New knowledge
         </a>
@@ -27,11 +41,11 @@
     </div>
 
     <!-- Sidenav Footer-->
-    <div class="sidenav-footer">
-      <div class="sidenav-footer-content">
-        <div class="sidenav-footer-subtitle">Logged in as:</div>
-        <div class="sidenav-footer-title">Valerie Luna</div>
-      </div>
-    </div>
+<!--    <div class="sidenav-footer">-->
+<!--      <div class="sidenav-footer-content">-->
+<!--        <div class="sidenav-footer-subtitle">Logged in as:</div>-->
+<!--        <div class="sidenav-footer-title">Valerie Luna</div>-->
+<!--      </div>-->
+<!--    </div>-->
   </nav>
 </div>

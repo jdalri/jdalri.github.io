@@ -34,6 +34,10 @@ export class DataService {
       .filter( (topic: Topic) => (topic.spaceId === spaceId && topic.name.toLowerCase().indexOf(searchCriteria)) > -1 );
   }
 
+  getAllTopics(): Topic[] {
+    return this.database.topicsList;
+  }
+
   // KNOWLEDGES
   getAllKnowledgeFromTopic(topicId: number): Knowledge[] {
     return this.database.knowledgeList.filter( (knowledge: Knowledge) => knowledge.topicId === topicId );

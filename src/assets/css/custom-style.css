@@ -9,3 +9,7 @@
 .toast-top-center {
   margin-top: 15px !important;
 }
+
+div.ck.ck-editor__main {
+  color: black;
+}

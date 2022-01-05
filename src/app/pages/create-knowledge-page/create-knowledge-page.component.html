@@ -45,9 +45,30 @@
               </div>
             </div>
 
+            <div class="form-row">
+              <div class="form-group col-md-6 col-sm-12">
+                <label for="topic">Topic</label>
+                <select class="form-control" id="topic" formControlName="topicId" (change)="changedTopic($event)" style="padding: 0.6rem 1.125rem;">
+                  <option value="" disabled>Choose a Topic</option>
+                  <option *ngFor="let topic of topicsList" [ngValue]="topic.id">{{ topic.name }}</option>
+                </select>
+
+                <div class="invalid-input" *ngIf="topicId.invalid && (topicId.dirty || topicId.touched)">
+                  <span *ngIf="topicId.errors?.['required']">Please choose the Topic.</span>
+                </div>
+              </div>
+            </div>
+
             <button class="btn btn-success" type="submit" style="margin-right: 5px;" [disabled]="knowledgeForm.invalid">Save</button>
             <button class="btn btn-primary" type="button" (click)="cancel()">Cancel</button>
           </form>
+
+          <div *ngIf="newKnowledge != null" style="margin-top: 30px;">
+            <p>
+              new Knowledge(X, '{{ newKnowledge.title }}', '{{ newKnowledge.shortTitle }}', `{{ newKnowledge.content }}`, {{ newKnowledge.topicId }}),
+            </p>
+          </div>
+
         </div>
       </div>
 

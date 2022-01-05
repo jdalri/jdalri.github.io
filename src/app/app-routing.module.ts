@@ -7,6 +7,8 @@ import {LoginPageComponent} from "./pages/login-page/login-page.component";
 import {TopicsPageComponent} from "./pages/topics-page/topics-page.component";
 import {KnowledgePageComponent} from "./pages/knowledge-page/knowledge-page.component";
 import {CreateKnowledgePageComponent} from "./pages/create-knowledge-page/create-knowledge-page.component";
+import {CreateTopicPageComponent} from "./pages/create-topic-page/create-topic-page.component";
+import {CreateSpacePageComponent} from "./pages/create-space-page/create-space-page.component";
 
 const routes: Routes = [
   {
@@ -18,14 +20,25 @@ const routes: Routes = [
     component: LayoutComponent,
     canActivate: [ AuthGuard ],
     children: [
+      // SPACES
       {
         path: 'spaces',
         component: SpacesPageComponent
       },
       {
+        path: 'spaces/create',
+        component: CreateSpacePageComponent
+      },
+      // TOPICS
+      {
         path: 'topics/spaceId/:spaceId',
         component: TopicsPageComponent
       },
+      {
+        path: 'topics/create',
+        component: CreateTopicPageComponent
+      },
+      // KNOWLEDGE
       {
         path: 'knowledges/topicId/:topicId',
         component: KnowledgePageComponent

@@ -16,7 +16,7 @@ export class TopicsPageComponent implements OnInit {
   iconMenu = faEllipsisV;
   iconAngleDoubleLeft = faAngleDoubleLeft;
 
-  showSpinner: boolean = false;
+  showSpinner: boolean = true;
   topicList: Topic[] = [];
   spaceId: number = null;
   space: Space;
@@ -45,6 +45,8 @@ export class TopicsPageComponent implements OnInit {
   }
 
   goToKnowledgePage(topic: Topic) {
+    this.showSpinner = true;
+
     this._router.navigateByUrl(`knowledges/topicId/${ topic.id }`, { state: { topic: topic, space: this.space } });
   }
 

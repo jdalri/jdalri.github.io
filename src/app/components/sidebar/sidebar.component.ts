@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
-import { faSitemap, faCogs, faAngleDown, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
+import { faSitemap, faCogs, faAngleDown, faAngleLeft, faLightbulb, faListAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,6 +12,8 @@ export class SidebarComponent implements OnInit {
   iconCogs = faCogs;
   iconAngleDown = faAngleDown;
   iconAngleUp = faAngleLeft;
+  iconLightbulb = faLightbulb;
+  iconListAlt = faListAlt;
 
   isCollapsed = true;
 

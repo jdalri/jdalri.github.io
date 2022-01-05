@@ -1,0 +1,50 @@
+<app-page-header
+  [showSmallHeader]="true"
+  [showGoBackButton]="false"
+  [title]="pageTitle"
+></app-page-header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+
+      <div class="card card-header-actions mb-4">
+        <div class="card-header" >
+          New Topic
+        </div>
+
+        <div class="card-body" style="min-height: 500px;">
+          <form [formGroup]="spaceForm" (ngSubmit)="onSubmit()">
+            <div class="form-row">
+              <!-- Name -->
+              <div class="form-group col-md-6 col-sm-12">
+                <label class="small mb-1" for="name">Name</label>
+                <input class="form-control" id="name" type="text" placeholder="Enter the name" formControlName="name" required />
+                <div class="invalid-input" *ngIf="name.invalid && (name.dirty || name.touched)">
+                  <span *ngIf="name.errors?.['required']">Please provide a name.</span>
+                </div>
+              </div>
+
+              <!-- Description -->
+              <div class="form-group col-md-6 col-sm-12">
+                <label class="small mb-1" for="description">Description</label>
+                <input class="form-control" id="description" type="text" placeholder="Enter the description" formControlName="description" />
+              </div>
+            </div>
+
+            <button class="btn btn-success" type="submit" style="margin-right: 5px;" [disabled]="spaceForm.invalid">Save</button>
+            <button class="btn btn-primary" type="button" (click)="cancel()">Cancel</button>
+          </form>
+
+          <div *ngIf="newSpace != null" style="margin-top: 30px;">
+            <p>
+              new Space(X, '{{ newSpace.name }}', '{{ newSpace.description }}', null)
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

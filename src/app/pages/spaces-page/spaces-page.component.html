@@ -12,7 +12,7 @@
 
   <div class="row" *ngIf="spaceList.length > 0">
     <div class="col-lg-4 mb-4" *ngFor="let space of spaceList">
-      <div class="card lift lift-sm h-100 card-anchor">
+      <div class="card lift lift-sm h-100 card-anchor" style="cursor: pointer; text-align: center;">
         <div class="card-body cursor-pointer" (click)="navigateToSpaceTopics(space)">
           <h5 class="card-title mb-2" [style.color]="space.color">
             {{ space.name }}
